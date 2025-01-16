@@ -1,0 +1,27 @@
+import numpy as np
+
+# Monthly sales data (rows: products, columns: months)
+sales_data = np.array([
+    [500, 600, 700, 800, 900, 1000],  # Product 1
+    [450, 500, 550, 600, 650, 700],   # Product 2
+    [300, 350, 400, 450, 500, 550],   # Product 3
+    [800, 850, 900, 950, 1000, 1050], # Product 4
+    [200, 300, 400, 500, 600, 700]    # Product 5
+])
+
+# Total sales for each product
+total_sales = np.sum(sales_data, axis=1)
+print("Total Sales for Each Product:", total_sales)
+
+# Average monthly sales for each product
+average_sales = np.mean(sales_data, axis=1)
+print("Average Monthly Sales for Each Product:", average_sales)
+
+# Identify the best-performing product
+best_product_index = np.argmax(total_sales)
+best_product = best_product_index + 1  # Adjusting for product indexing
+print(f"Best Performing Product: Product {best_product}")
+
+# Total revenue for the store
+total_revenue = np.sum(sales_data)
+print("Total Revenue for the Store:", total_revenue)
